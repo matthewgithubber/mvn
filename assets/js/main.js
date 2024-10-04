@@ -218,14 +218,6 @@
 
 
 
-////////
-
-(function($) {
-
-	var	$window = $(window),
-		$body = $('body'),
-		settings = {
-
 			// Carousels
 				carousels: {
 					speed: 4,
