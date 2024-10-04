@@ -221,3 +221,34 @@
 		
 
 })(jQuery);
+
+let reviewIndex = 0;
+const reviews = document.querySelectorAll('.review');
+const indicators = document.querySelectorAll('.indicator');
+
+function carouselPrev() {
+  reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
+  updateCarousel();
+}
+
+function carouselNext() {
+  reviewIndex = (reviewIndex + 1) % reviews.length;
+  updateCarousel();
+}
+
+function carouselGoTo(index) {
+  reviewIndex = index;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  reviews.forEach((review, index) => {
+    review.classList.toggle('active', index === reviewIndex);
+  });
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle('active', index === reviewIndex);
+  });
+}
+
+// Initialize carousel
+updateCarousel();
