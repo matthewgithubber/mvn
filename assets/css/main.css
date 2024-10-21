@@ -2393,3 +2393,27 @@ input, select, textarea {
 .indicator.active {
   background-color: #333;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  margin: 10px;
+  width: calc(33.33% - 20px); /* adjust width for 3 columns */
+}
+
+/* Optional: for smaller screens */
+@media (max-width: 768px) {
+  .gallery-item {
+    width: calc(50% - 20px); /* adjust width for 2 columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    width: 100%; /* single column on mobile */
+  }
+}
